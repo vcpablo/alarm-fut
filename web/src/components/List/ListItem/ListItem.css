@@ -1,0 +1,9 @@
+.list-group-item+.list-group-item.active {
+  margin-top: 0px !important;
+}
+
+.ListItem__item:active, .ListItem__item:focus:not(.active) {
+  background-color: transparent !important;
+  color: unset !important;
+}
+

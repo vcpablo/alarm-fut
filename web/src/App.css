@@ -1,0 +1,33 @@
+
+*:focus{
+  outline: none !important;
+}
+html, body, #app, #app>div {
+  height: 100%
+}
+
+.card-body {
+  overflow: auto !important;
+  height: 65vh !important;
+}
+
+
+.list-group-item.active {
+  border-color: #fff !important;
+}
+
+.list-group-item+.list-group-item {
+  border-top-width: thin !important;
+}
+
+.invalid-feedback {
+  display: block !important;
+}
+
+.navbar {
+  padding: 0.5rem 1rem !important;
+}
+
+.nav-link {
+  padding: 0.5rem 1rem !important;
+}

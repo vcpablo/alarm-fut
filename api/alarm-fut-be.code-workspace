@@ -1,0 +1,23 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "eslint.validate": ["javascript"],
+    "editor.formatOnSave": true,
+    "javascript.format.insertSpaceAfterCommaDelimiter": false,
+    "javascript.format.semicolons": "remove",
+    "editor.tabSize": 2,
+    "prettier.semi": false,
+    "prettier.singleQuote": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    },
+    "git.ignoreLimitWarning": true
+  },
+  "extensions": {
+    "recommendations": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode"]
+  }
+}

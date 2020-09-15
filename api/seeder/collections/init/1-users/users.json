@@ -1,0 +1,9 @@
+[
+  {
+    "name": "Administrator",
+    "email": "vcpablo@gmail.com",
+    "password": "$2b$10$mGsOK.6h7vjPlIM4zEOyN.OSfwd5GUmquill1CXQvu3UCIzRCjlay",
+    "isActive": true,
+    "lastAccess": null
+  }
+]

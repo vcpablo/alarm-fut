@@ -1,0 +1,70 @@
+scalar JSON
+scalar JSONObject
+
+type Area {
+  id: Int @fake(type: number)
+  name: String @fake(type: country)
+  code: String @fake(type: countryCode)
+  ensignUrl: String @examples (values: ["https://upload.wikimedia.org/wikipedia/en/e/eb/Manchester_City_FC_badge.svg"])
+}
+
+type Team {
+  id: Int @fake(type: number)
+  name: String @examples(values: ["Liverpool", "Real Madrid", "Flamengo"])
+  shortName: String @examples(values: ["Liverpool", "Real Madrid", "Flamengo"])
+  tla: String @examples(values: ["LIV", "RMA", "FLA"])
+  crestUrl: String @examples (values: ["https://upload.wikimedia.org/wikipedia/en/e/eb/Manchester_City_FC_badge.svg"]),
+  area: Area
+}
+
+type FullTimeScore {
+  homeTeam: Int @examples(values: [0 1 2 3 4])
+  awayTeam: Int @examples(values: [0 1 2 3 4])
+}
+
+type Score {
+  winner: String @examples(values: ["HOME_TEAM", "AWAY_TEAM", "DRAW"])
+  duration: String @examples(values: ["REGULAR"])
+  fullTime: FullTimeScore
+}
+
+type Match {
+  id: Int @fake(type: number)
+  utcDate: String @fake(type: pastDate, options: { dateFormat: "YYYY-MM-DDTHH:mm:ssZ" })
+  status: String @examples(values: ["SCHEDULED", "IN_PLAY", "SCHEDULED"])
+  score: Score,
+  homeTeam: Team
+  awayTeam: Team
+}
+
+type Competition {
+  id: Int @fake(type: number)
+  name: String @fake(type: companyName)
+  group: String @fake(type: financeAccountName)
+  area: Area,
+  matches: [Match]
+}
+
+type User {
+  id: Int @fake(type: number)
+  name: String @fake(type: firstName)
+  email: String @fake(type: email)
+}
+
+type Token {
+  token: String @fake(type: uuid),
+  user: User
+}
+
+type Query {
+  areas(id: Int): [Area]
+  teams(id: Int): [Team]
+  matches(from: String, to: String): [Match]
+  competitionsMatches(from: String, to: String): [Competition]
+  me(token: String): [User] @listLength(min: 1, max: 1)
+}
+
+type Mutation {
+  authenticate(email: String, password: String): [Area] @listLength(min: 1, max: 1)
+}
+

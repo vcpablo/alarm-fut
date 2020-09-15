@@ -1,0 +1,21 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "editor.tabSize": 2,
+    "editor.formatOnSave": false,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    },
+    "javascript.format.insertSpaceAfterCommaDelimiter": false,
+    "javascript.format.semicolons": "remove",
+    "javascript.format.enable": false,
+    "typescript.format.semicolons": "remove",
+    "typescript.format.enable": false,
+    "eslint.alwaysShowStatus": true,
+    "prettier.singleQuote": true
+  }
+}

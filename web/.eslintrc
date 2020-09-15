@@ -1,0 +1,25 @@
+{
+  "extends": ["react-app"],
+  "plugins": ["react", "prettier", "react-hooks"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "rules": {
+    "comma-dangle": ["error", "never"],
+    "semi": ["error", "never"],
+    "quotes": ["error", "single"],
+    "keyword-spacing": ["error", { "after": true }],
+    "prettier/prettier": [
+      "error",
+      {
+        "semi": false,
+        "singleQuote": true
+      }
+    ],
+    "react-hooks/exhaustive-deps": "off"
+  }
+}
